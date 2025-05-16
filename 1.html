@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Махмуджон - IT Специалист / IT Mutaxassisi</title>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <style>
+        /* Общие стили */
+        body {
+            font-family: 'Courier New', Courier, monospace;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        .container {
+            width: 80%;
+            margin: auto;
+            overflow: hidden;
+            padding: 20px 0;
+        }
+
+        .section {
+            padding: 30px 0;
+        }
+
+        /* Header */
+        header {
+            background: #333;
+            color: #fff;
+            padding: 10px 0;
+            border-bottom: 3px solid #e8491d;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        header nav {
+            display: flex;
+            align-items: center;
+        }
+
+        header a {
+            color: #fff;
+            text-decoration: none;
+            text-transform: uppercase;
+            font-size: 14px;
+            margin-left: 20px;
+            transition: color 0.3s ease;
+        }
+
+        header a:hover {
+            color: #f4f4f4;
+        }
+
+        /* Tilni almashtirish tugmasi */
+        #language-toggle {
+            background-color: #e8491d;
+            color: white;
+            padding: 5px 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            margin-right: 20px;
+        }
+
+        #language-toggle:hover {
+            background-color: #c53a16;
+        }
+
+        /* Mobil qurilmalar uchun uslublar */
+        @media (max-width: 768px) {
+            header {
+                padding: 5px 0;
+                font-size: 0.8em;
+            }
+
+            header nav a {
+                font-size: 12px;
+                margin-left: 10px;
+            }
+
+            #language-toggle {
+                font-size: 0.8em;
+                padding: 3px 6px;
+                margin-right: 10px;
+            }
+
+            h1 {
+                font-size: 1.5em;
+            }
+
+            /* "Men Maxmudjon" degan matn va rasmni kichraytirish */
+            .avatar {
+                width: 100px;
+                height: 100px;
+                /* margin-right: 10px; */
+            }
+
+            #about-title {
+                font-size: 1.2em;
+            }
+
+            .container {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            #about .container {
+              display: flex;
+              flex-direction: column;
+              align-items: center;
+              text-align: center; /* Matnni markazga to'g'rilash */
+            }
+
+            .avatar {
+              /* margin: 0 auto 10px; /* Avatarni markazga to'g'rilash */
+              /* float: none; */ 
+              margin-left: 10PX;
+            }
+        }
+
+        /* Boshqa uslublar */
+        .avatar {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            float: left;
+            margin-right: 20px;
+            border: 3px solid #e8491d;
+            transition: transform 0.5s ease-in-out;
+        }
+
+        .avatar:hover {
+            transform: rotate(360deg);
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-gap: 20px;
+        }
+
+        .service-card {
+
+            padding: 20px;
+            border: 1px solid #ddd;
+            background-color: rgb(247, 173, 76);
+            transition: transform 0.3s ease;
+        }
+
+        .service-card p {
+            text-align: justify;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .button {
+            display: inline-block;
+            background: #e8491d;
+            color: #fff;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+        }
+
+        .button:hover {
+            background: #c53a16;
+        }
+
+        #contact ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        #contact li {
+            margin-bottom: 10px;
+        }
+
+        footer {
+            background: #333;
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+        }
+
+        /* Umumiy responsivlik */
+        @media (max-width: 768px) {
+            .container {
+                width: 90%;
+            }
+
+            body {
+                font-size: 14px;
+            }
+
+            h2 {
+                font-size: 20px;
+            }
+
+            p {
+                font-size: 14px;
+            }
+        }
+    </style>
+
+<body>
+
+    <!-- Header -->
+    <header data-aos="fade-down" data-aos-duration="1000">
+    
+        <a href="#" id="language-toggle" onclick="toggleLanguage()">UZB</a>
+    </header>
+
+    <!-- Обо мне секцияси -->
+    <section id="about" class="section">
+        <div class="container">
+            <img src="./1-. JPG.jpg" alt="Мое фото" class="avatar" data-aos="fade-right" data-aos-duration="1000">
+            <h1 data-aos="fade-left" data-aos-duration="1000" id="about-title">Привет! Я Махмуджон, Специалист по
+                информационным технологиям.</h1>
+        </div>
+    </section>
+
+    <!-- Услуги секцияси -->
+    <section id="services" class="section">
+        <div class="container">
+            <h2 style="margin-top: 0;" data-aos="fade-up" data-aos-duration="1000" id="services-title">Мои услуги
+            </h2>
+            <div class="services-grid">
+                <!-- Услуга 1 -->
+                <div class="service-card" data-aos="fade-up" data-aos-duration="1000">
+                    <h3 id="service-1-title">Создание веб-сайта вашей организации</h3>
+                    <p id="service-1-description">Я фронтенд-веб-разработчик. Помогаю компаниям создавать
+                        современные и удобные веб-сайты, которые привлекают пользователей и решают бизнес-задачи.</p>
+                </div>
+                <!-- Услуга 2 -->
+                <div class="service-card" data-aos="fade-up" data-aos-duration="1000">
+                    <h3 id="service-2-title">Организация доменной структуры</h3>
+                    <p id="service-2-description">Автоматизация установки, обновления и управления ПО через домен для
+                        снижения нагрузки на IT-отдел.</p>
+                </div>
+                <!-- Услуга 3 -->
+                <div class="service-card" data-aos="fade-up" data-aos-duration="1000">
+                    <h3 id="service-3-title">Настройка и обслуживание серверной инфраструктуры: файловые, почтовые,
+                        Принт Серверы.</h3>
+                    <p id="service-3-description">Настройка и поддержание стабильной работы серверов для хранения
+                        файлов, почты и печати.</p>
+                </div>
+                <!-- Услуга 4 -->
+                <div class="service-card" data-aos="fade-up" data-aos-duration="1000">
+                    <h3 id="service-4-title">Настройка и оптимизация вашего роутера</h3>
+                    <p id="service-4-description">Настроим безопасный роутер для вашей семьи! Стабильный Wi-Fi, защита
+                        от взлома, и родительский контроль: ограничивайте контент и время в сети (особенно ночью).</p>
+                </div>
+                <!-- Услуга 5 -->
+                <div class="service-card" data-aos="fade-up" data-aos-duration="1000">
+                    <h3 id="service-5-title">Установка и настройка камер видеонаблюдения</h3>
+                    <p id="service-5-description">Защитите свой дом или бизнес с помощью профессиональной установки и
+                        настройки камер видеонаблюдения "Hikvision".</p>
+                </div>
+                <!-- Услуга 6 -->
+                <div class="service-card" data-aos="fade-up" data-aos-duration="1000">
+                    <h3 id="service-6-title">Установка и настройка ОС и ПО</h3>
+                    <p id="service-6-description">Быстрая установка Windows (8.1, 10, 11) и популярных программ:
+                        AutoCAD, Photoshop, 1C, Office и защита от вирусов.</p>
+                </div>
+                <!-- Услуга 7 -->
+                <div class="service-card" data-aos="fade-up" data-aos-duration="1000">
+                    <h3 id="service-7-title">Обслуживание 1С</h3>
+                    <p id="service-7-description">Оперативное решение проблем, автоматизация резервного копирования и
+                        обновлений, консультации. Экономия времени на администрирование и поддержание работоспособности
+                        1С.</p>
+                </div>
+                <!-- Услуга 8 -->
+                <div class="service-card" data-aos="fade-up" data-aos-duration="1000">
+                    <h3 id="service-8-title">Makhmud/Dev Coding School</h3>
+                    <p id="service-8-description">Обучение ИТ-профессиям: HTML, CSS, Bootstrap, JavaScript, React, 1C,
+                        сетевое администрирование. Легкий старт, быстрый результат.</p>
+                    <!-- <a href="./input.html" class="button" id="learn-more-button">Переход в школу</a> -->
+                    <a href="./input.html   ">Переход в школу</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Контакты секцияси -->
+    <section id="contact" class="section">
+        <div class="container">
+            <h2 data-aos="fade-up" data-aos-duration="1000" id="contact-title">Контакты</h2>
+            <p data-aos="fade-up" data-aos-duration="1000" id="contact-info">Связаться со мной:</p>
+            <ul data-aos="fade-up" data-aos-duration="1000">
+                <li>Email: <a href="mailto:makhmud.dev@mail.ru">makhmud.dev@mail.ru</a></li>
+                <li>Телефон: +998(77)430-57-59</li>
+                <li><a href="https://t.me/makhmudj6n">Телеграм</a></li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer data-aos="fade-up" data-aos-duration="1000">
+        <p>&copy; 2025 Makhmud.Dev</p>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 1200, // Анимация даврийлиги (миллисекундларда)
+            once: true,    // Анимация фақат бир марта ишлаши
+            easing: 'ease-in-out' // Анимация тури
+        });
+
+        let currentLanguage = 'ru';
+
+        function toggleLanguage() {
+            currentLanguage = currentLanguage === 'ru' ? 'uz' : 'ru';
+            updateContent();
+        }
+
+        function updateContent() {
+            const languageToggle = document.getElementById('language-toggle');
+            const aboutTitle = document.getElementById('about-title');
+            const servicesTitle = document.getElementById('services-title');
+            const contactTitle = document.getElementById('contact-title');
+            const contactInfo = document.getElementById('contact-info');
+            const learnMoreButton = document.getElementById('learn-more-button');
+
+            const service1Title = document.getElementById('service-1-title');
+            const service1Description = document.getElementById('service-1-description');
+            const service2Title = document.getElementById('service-2-title');
+            const service2Description = document.getElementById('service-2-description');
+            const service3Title = document.getElementById('service-3-title');
+            const service3Description = document.getElementById('service-3-description');
+            const service4Title = document.getElementById('service-4-title');
+            const service4Description = document.getElementById('service-4-description');
+            const service5Title = document.getElementById('service-5-title');
+            const service5Description = document.getElementById('service-5-description');
+            const service6Title = document.getElementById('service-6-title');
+            const service6Description = document.getElementById('service-6-description');
+            const service7Title = document.getElementById('service-7-title');
+            const service7Description = document.getElementById('service-7-description');
+            const service8Title = document.getElementById('service-8-title');
+            const service8Description = document.getElementById('service-8-description');
+
+            if (currentLanguage === 'ru') {
+                languageToggle.innerText = 'UZB';
+                aboutTitle.innerText = 'Привет! Я Махмуджон, Специалист по информационным технологиям.';
+                servicesTitle.innerText = 'Мои услуги';
+                contactTitle.innerText = 'Контакты';
+                contactInfo.innerText = 'Связаться со мной:';
+
+                service1Title.innerText = 'Создание веб-сайта вашей организации';
+                service1Description.innerText = 'Я фронтенд-веб-разработчик. Помогаю компаниям создавать современные и удобные веб-сайты, которые привлекают пользователей и решают бизнес-задачи.';
+                service2Title.innerText = 'Организация доменной структуры';
+                service2Description.innerText = 'Автоматизация установки, обновления и управления ПО через домен для снижения нагрузки на IT-отдел.';
+                service3Title.innerText = 'Настройка и обслуживание серверной инфраструктуры: файловые, почтовые, Принт Серверы.';
+                service3Description.innerText = 'Настройка и поддержание стабильной работы серверов для хранения файлов, почты и печати.';
+                service4Title.innerText = 'Настройка и оптимизация вашего роутера';
+                service4Description.innerText = 'Настроим безопасный роутер для вашей семьи! Стабильный Wi-Fi, защита от взлома, и родительский контроль: ограничивайте контент и время в сети (особенно ночью).';
+                service5Title.innerText = 'Установка и настройка камер видеонаблюдения';
+                service5Description.innerText = 'Защитите свой дом или бизнес с помощью профессиональной установки и настройки камер видеонаблюдения "Hikvision".';
+                service6Title.innerText = 'Установка и настройка ОС и ПО';
+                service6Description.innerText = 'Быстрая установка Windows (8.1, 10, 11) и популярных программ: AutoCAD, Photoshop, 1C, Office и защита от вирусов.';
+                service7Title.innerText = 'Обслуживание 1С';
+                service7Description.innerText = 'Оперативное решение проблем, автоматизация резервного копирования и обновлений, консультации. Экономия времени на администрирование и поддержание работоспособности 1С.';
+                service8Title.innerText = 'Makhmud/Dev Coding School';
+                service8Description.innerText = 'Обучение ИТ-профессиям: HTML, CSS, Bootstrap, JavaScript, React, 1C, сетевое администрирование. Легкий старт, быстрый результат.';
+                learnMoreButton.innerText = 'Подробнее';
+            } else {
+                languageToggle.innerText = 'РУС';
+                aboutTitle.innerText = 'Salom! Men Mahmudjon, Axborot texnologiyalari mutaxassisiman.';
+                servicesTitle.innerText = 'Mening xizmatlarim';
+                contactTitle.innerText = 'Aloqa';
+                contactInfo.innerText = "Men bilan bog'lanish:";
+                service1Title.innerText = 'Tashkilotingiz uchun veb-sayt yaratish';
+                service1Description.innerText = 'Men frontend veb-dasturchiman. Kompaniyalarga zamonaviy va qulay veb-saytlar yaratishga yordam beraman, ular foydalanuvchilarni jalb qiladi va biznes vazifalarini hal qiladi.';
+                service2Title.innerText = 'Domain tuzilmasini tashkil qilish';
+                service2Description.innerText = 'IT-bo\'limiga yuklamani kamaytirish uchun dasturlarni domayn orqali o\'rnatish, yangilash va boshqarishni avtomatlashtirish.';
+                service3Title.innerText = 'Server infratuzilmasini sozlash va xizmat ko\'rsatish: fayl, pochta, printer serverlari.';
+                service3Description.innerText = 'Fayllar, pochta va chop etish uchun serverlarning barqaror ishlashini sozlash va ta\'minlash.';
+                service4Title.innerText = 'Routeringizni sozlash va optimallashtirish';
+                service4Description.innerText = 'Oilangiz uchun xavfsiz router sozlaymiz! Barqaror Wi-Fi, buzilishdan himoya va ota-ona nazorati: kontent va tarmoqdagi vaqtni cheklang (ayniqsa, kechalari).';
+                service5Title.innerText = 'Video kuzatuv kameralarini o\'rnatish va sozlash';
+                service5Description.innerText = 'Hikvision video kuzatuv kameralarini professional o\'rnatish va sozlash yordamida uyingizni yoki biznesingizni himoya qiling.';
+                service6Title.innerText = 'OS va dasturlarni o\'rnatish va sozlash';
+                service6Description.innerText = 'Windows (8.1, 10, 11) va mashhur dasturlarni tez o\'rnatish: AutoCAD, Photoshop, 1C, Office va viruslardan himoya.';
+                service7Title.innerText = '1C xizmat ko\'rsatish';
+                service7Description.innerText = 'Muammolarni tezkor hal qilish, zaxira nusxalarini avtomatlashtirish va yangilanishlar, maslahatlar. 1C-ni boshqarish va qo\'llab-quvvatlashga vaqtni tejash.';
+                service8Title.innerText = 'Makhmud/Dev Coding School';
+                service8Description.innerText = 'IT-kasblarga o\'qitish: HTML, CSS, Bootstrap, JavaScript, React, 1C, сетевое администрирование. Oson start, tez natija.';
+                learnMoreButton.innerText = 'Batafsil';
+            }
+        }
+
+        updateContent();
+    </script>
+</body>
+
+</html>
